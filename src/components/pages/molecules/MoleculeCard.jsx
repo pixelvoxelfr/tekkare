@@ -15,7 +15,7 @@ export default function MoleculeCard({ molecule, index, searchTerm }) {
   }, [molecule.name]);
 
   function handleCardClick() {
-    navigate(`/molecule/${index}`);
+    navigate(`/tekkare/molecules/${index}`);
   }
 
   function handleToggleFavorite(event) {

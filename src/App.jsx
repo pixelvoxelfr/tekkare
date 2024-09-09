@@ -1,24 +1,26 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./components/pages/RootLayout";
+import HomePage from "./components/pages/HomePage";
 import MoleculesList, {
   loader as loaderMoleculesList,
 } from "./components/pages/molecules/MoleculesList";
 import MoleculePage, {
   loader as loaderMolecule,
 } from "./components/pages/molecules/MoleculePage";
-import { elements } from "chart.js";
 
 const router = createBrowserRouter([
   {
     path: "/tekkare",
+    element: <RootLayout />,
     children: [
-      { index: true, elements: <MoleculesList />, loader: loaderMoleculesList },
+      { index: true, element: <HomePage /> },
       {
         path: "molecules",
         element: <MoleculesList />,
         loader: loaderMoleculesList,
       },
       {
-        path: "molecule/:index",
+        path: "/tekkare/molecules/:index",
         element: <MoleculePage />,
         loader: loaderMolecule,
       },

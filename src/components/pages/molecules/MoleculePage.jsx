@@ -46,11 +46,11 @@ export default function MoleculePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-teal-950 flex justify-left gap-4 p-4 align-middle items-stretch">
-        <Link to=".." className="hover:underline">
+        <Link to="/tekkare/molecules" className="hover:underline">
           <i className="fas fa-circle-left text-white text-2xl" />
         </Link>
         <h1>
-          <Link to=".." className="hover:underline">
+          <Link to="/tekkare/molecules" className="hover:underline">
             Molecules
           </Link>{" "}
           / {molecule.name}
