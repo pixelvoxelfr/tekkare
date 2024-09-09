@@ -9,8 +9,27 @@
       rel="stylesheet"
     />
     <link href="./src/assets/fontawesome/css/solid.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css" /> -->
     <title>Tekkare Assessment</title>
+
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -5,13 +5,24 @@ import MoleculesList, {
 import MoleculePage, {
   loader as loaderMolecule,
 } from "./components/pages/molecules/MoleculePage";
+import { elements } from "chart.js";
 
 const router = createBrowserRouter([
-  { path: "/", element: <MoleculesList />, loader: loaderMoleculesList },
   {
-    path: "/molecule/:index",
-    element: <MoleculePage />,
-    loader: loaderMolecule,
+    path: "/tekkare",
+    children: [
+      { index: true, elements: <MoleculesList />, loader: loaderMoleculesList },
+      {
+        path: "molecules",
+        element: <MoleculesList />,
+        loader: loaderMoleculesList,
+      },
+      {
+        path: "molecule/:index",
+        element: <MoleculePage />,
+        loader: loaderMolecule,
+      },
+    ],
   },
 ]);
 
